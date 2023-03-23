@@ -729,7 +729,7 @@ Specify this option multiple times to create a HA configuration for multiple net
 **--nodes \<nodes\>**  
 A comma-separated list of node IDs or hostnames
 
-**--force**
+**--force**  
 Skip checks for minimal hardware requirements.
 
 ### Command run options:
@@ -11575,8 +11575,7 @@ usage: vinfra service compute storage add [--max-value-length MAX_VALUE_LENGTH]
                                           [--params <param3=value3>] ...]
                                           [--secret-params <param=value>[,<param2=value2>]
                                           [--secret-params <param3=value3>] ...]
-                                          [--nfs-mount-options <opts>]
-                                          [--enable | --disable] [--pure | --nfs] <name>
+                                          [--enable | --disable] <name>
 ```
 
 ### Positional arguments:
@@ -11592,23 +11591,11 @@ A comma-separated list of parameters in the format `key=value`. This option can 
 **--secret-params \<param=value\>[,\<param2=value2\>] [--params \<param3=value3\>] ...**  
 A comma-separated list of secret parameters in the format `key=value`. This option can be used multiple times.
 
-**--nfs-mount-options \<opts\>**  
-A comma-separated list of mount options for compute storages that use the generic NFS driver, with additional flags separated by spaces. Refer to 'mount(8)' and 'nfs(5)'. 
-Example: `nfsvers=4,minorversion=0,timeo=150,retrans=3 -m -s`
-Note that if nfs_shares_config is used, these mount options are applied to every share listed in the config file, unless overwritten in config file.
-
 **--enable**  
 Enable the compute storage
 
 **--disable**  
 Disable the compute storage
-
-**--pure**  
-Shortcut for adding a storage that uses the PureStorage driver
-
-**--nfs**  
-Shortcut for adding a storage that uses the generic NFS driver
-
 
 ### Command run options:
 
@@ -11673,8 +11660,7 @@ usage: vinfra service compute storage set [--wait] [--timeout <seconds>]
                                           [--params <param3=value3>] ...]
                                           [--secret-params <param=value>[,<param2=value2>]
                                           [--secret-params <param3=value3>] ...]
-                                          [--nfs-mount-options <opts>]
-                                          [--enable | --disable] [--pure | --nfs]
+                                          [--enable | --disable]
                                           [--unset-params <params>]
                                           [--unset-secret-params <params>]
                                           <name>
@@ -11693,22 +11679,11 @@ A comma-separated list of parameters in the format `key=value`. This option can 
 **--secret-params \<param=value\>[,\<param2=value2\>] [--params \<param3=value3\>] ...**  
 A comma-separated list of secret parameters in the format `key=value`. This option can be used multiple times.
 
-**--nfs-mount-options \<opts\>**  
-A comma-separated list of mount options for compute storages that use the generic NFS driver, with additional flags separated by spaces. Refer to 'mount(8)' and 'nfs(5)'. 
-Example: `nfsvers=4,minorversion=0,timeo=150,retrans=3 -m -s`
-Note that if nfs_shares_config is used, these mount options are applied to every share listed in the config file, unless overwritten in config file.
-
 **--enable**  
 Enable the compute storage
 
 **--disable**  
 Disable the compute storage
-
-**--pure**  
-Shortcut for adding a storage that uses the PureStorage driver
-
-**--nfs**  
-Shortcut for adding a storage that uses the generic NFS driver
 
 **--unset-params \<params\>**  
 A comma-separated list of parameters to unset
